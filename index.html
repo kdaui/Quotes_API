@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evangelion Quotes</title>
+    <style>
+        :root {
+          --primary-dark: #0A0F1C;
+          --secondary-dark: #141928;
+          --tertiary-dark: #1C2333;
+          --primary-blue: #1B3A5F;
+          --secondary-blue: #2C4E7C;
+          --accent-blue: #3D6299;
+          --light-accent: #5E8ABF;
+          --text-primary: #B8C5D6;
+          --text-secondary: #8A9BB3;
+          --accent-red: #8B2635;
+          --border-color: #2A3F5F;
+        }
+      
+        body { 
+          background: var(--primary-dark); 
+          color: var(--text-primary); 
+          font-family: 'Share Tech Mono', monospace; 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          justify-content: center; 
+          height: 100vh; 
+          margin: 0; 
+          text-align: center; 
+        }
+      
+        .quote-box { 
+          max-width: 600px; 
+          padding: 20px; 
+          border: 2px solid #ff3e3e; 
+          margin-bottom: 20px; 
+         }
+      
+        button { 
+          background: #ff3e3e; 
+          color: var(--text-primary); 
+          border: none; 
+          padding: 10px 20px; 
+          cursor: pointer; 
+          font-weight: bold; 
+        }
+        button:hover { 
+          background: white; 
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <h1 id="quote">"Loading..."</h1>
+        <p id="author">- ???</p>
+    </div>
+    <button onclick="getQuote()">GET NEW QUOTE</button>
+
+    <script>
+        async function getQuote() {
+            const response = await fetch('https://my-json-server.typicode.com/kdaui/eva-quotes/quotes');
+            const data = await response.json();
+            const randomQuote = data[Math.floor(Math.random() * data.length)];
+            document.getElementById('quote').innerText = `"${randomQuote.text}"`;
+            document.getElementById('author').innerText = `- ${randomQuote.character}`;
+        }
+        getQuote();
+    </script>
+</body>
+</html>

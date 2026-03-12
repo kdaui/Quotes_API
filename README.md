@@ -16,7 +16,7 @@ I made this project to run on Vercel (because its free). It comes with two main 
 You can fetch these quotes dynamically using JavaScript. Heres an example of grabbing a random quote:
 
 ```javascript
-fetch('https://(ill update this when i deploy it on vercel)/api/random')
+fetch('https://https://quotes-api-pink.vercel.app/api/random')
   .then(response => response.json())
   .then(quote => {
     console.log(`"${quote.text}" - ${quote.character}`);

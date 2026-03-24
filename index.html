@@ -61,28 +61,31 @@
     <button onclick="getQuote()">GET NEW QUOTE</button>
 
     <script>
-        async function getQuote() {
-            try {
-                const API_URL = 'https://quotes-api-pink.vercel.app/api/random';
-                const response = await fetch('API_URL');
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Server responded with ${response.status}: ${errorText}`);
-                    throw new Error("Could not fetch quote from the API.");
-                }
-                const randomQuote = await response.json();
-                if (randomQuote && randomQuote.text) {
-                    document.getElementById('quote').innerText = `"${randomQuote.text}"`;
-                    document.getElementById('author').innerText = `- ${randomQuote.character || '???'}`;
-                } else {
-                    document.getElementById('quote').innerText = "The quote list is empty or formatted wrong!";
-                }
-            } catch (error) {
-                console.error("Error details:", error);
-                document.getElementById('quote').innerText = "Error loading quote. See console for details.";
-            }
+async function getQuote() {
+    const API_URL = 'https://quotes-api-pink.vercel.app/api/random';
+    
+    try {
+        console.log("Attempting to fetch from:", API_URL);
+        const response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            const errorBody = await response.text();
+            throw new Error(`Server Error ${response.status}: ${errorBody}`);
         }
-        getQuote();
+
+        const data = await response.json();
+        console.log("Data received successfully:", data);
+        document.getElementById('quote').innerText = `"${data.text || data.quote || 'No text found'}"`;
+        document.getElementById('author').innerText = `- ${data.character || data.author || 'Unknown'}`;
+
+    } catch (error) {
+        console.error("Detailed Error:", error);
+        document.getElementById('quote').innerText = "Could not connect to the database.";
+        document.getElementById('author').innerText = "Check console for details.";
+    }
+}
+
+getQuote();
     </script>
 </body>
 

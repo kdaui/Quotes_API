@@ -3,6 +3,8 @@
 
 <head>
     <title>Quotes Database Frontend ig</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#5E8ABF" />
     <style>
         :root {
             --primary-dark: #0A0F1C;
@@ -86,6 +88,17 @@ async function getQuote() {
 }
 
 getQuote();
+    </script>
+    <footer class="site-footer">
+        <p>Last updated: <span class="last-updated"></span></p>
+    </footer>
+    <script>
+        document.querySelector('.last-updated').textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/Quotes_API/sw.js').then(() => {});
+        }
     </script>
 </body>
 

@@ -54,26 +54,11 @@
         }
 
         .site-footer {
-            position: relative;
+            text-align: center;
             padding: 15px 20px;
             border-top: 1px solid var(--border-color);
             color: var(--text-secondary);
             margin-top: 40px;
-            text-align: center;
-        }
-
-        .site-footer .footer-center {
-            padding-right: 120px;
-        }
-
-        .site-footer .last-updated-date {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            opacity: 0.6;
         }
     </style>
 </head>
@@ -112,12 +97,7 @@ async function getQuote() {
 
 getQuote();
     </script>
-    <footer class="site-footer">
-        <span class="last-updated-date">Last updated: <span class="last-updated"></span></span>
-    </footer>
-    <script>
-        document.querySelector('.last-updated').textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
-    </script>
+    
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/Quotes_API/sw.js').then(() => {});

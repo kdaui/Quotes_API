@@ -18,5 +18,5 @@ jobs:
         with:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
           BUILD_DIR: '.'
-          DEPLOY_DIR: '/Quotes_API'
+          DEPLOY_DIR: '/kdaui.nekoweb.org/Quotes_API'
           NEKOWEB_PAGENAME: 'kdaui'

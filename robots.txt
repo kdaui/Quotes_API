@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kdaui.github.io/Quotes_API/sitemap.xml

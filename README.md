@@ -91,7 +91,7 @@ Visit [quotes-api-pink.vercel.app](https://quotes-api-pink.vercel.app) and click
 
 **Quote format:**
 ```json
-{ "id": 68, "text": "Your quote here", "character": "Character Name" }
+{ "id": [next available number], "text": "Your quote here", "character": "Character Name" }
 ```
 
 - `id` must be unique (use the next available number)

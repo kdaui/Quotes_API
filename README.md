@@ -103,6 +103,22 @@ To add new quotes, edit `db.json` following this format:
 }
 ```
 
+## Contributing
+
+Want to add a quote? Here's how:
+
+1. Fork the repository
+2. Edit `db.json` - add a new quote with a unique `id`
+3. Submit a pull request
+
+**Quote format:**
+```json
+{ "id": 68, "text": "Your quote here", "character": "Character Name" }
+```
+
+- `id` must be unique (use the next available number)
+- `character` is just the name (e.g., "Rei Ayanami" or "Kanye West")
+
 ## License
 
 MIT

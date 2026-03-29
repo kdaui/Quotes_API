@@ -69,8 +69,9 @@
         <p id="author">- ???</p>
     </div>
     <button onclick="getQuote()">GET NEW QUOTE</button>
-    <br><br>
-    <button onclick="document.getElementById('submit-form').style.display='block'" style="background:#333;font-size:12px;">SUBMIT A QUOTE</button>
+
+    <div style="height: 20px;"></div>
+    <button onclick="document.getElementById('submit-form').style.display='block'" style="background:#333;font-size:12px;margin-top:15px;">SUBMIT A QUOTE</button>
 
     <div id="submit-form" style="display:none;margin-top:20px;text-align:left;max-width:400px;">
         <h3>Submit a Quote</h3>
@@ -125,16 +126,6 @@ function submitQuote() {
     document.getElementById('quote-text').value = '';
     document.getElementById('quote-author').value = '';
 }
-    </script>
-    
-    <footer>
-        <p>"God's in his heaven. All's right with the world." - NERV</p>
-    </footer>
-    
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/Quotes_API/sw.js').then(() => {});
-        }
     </script>
 </body>
 

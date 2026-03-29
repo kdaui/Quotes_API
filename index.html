@@ -122,7 +122,7 @@ function submitQuote() {
     const body = `**Quote:** ${text}\n\n**Character:** ${author}`;
     window.open(`https://github.com/kdaui/Quotes_API/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, '_blank');
     
-    document.getElementById('submit-msg').innerText = 'Thanks! Your email app should open.';
+    document.getElementById('submit-msg').innerText = 'Thanks! A new issue should open on GitHub.';
     document.getElementById('quote-text').value = '';
     document.getElementById('quote-author').value = '';
 }

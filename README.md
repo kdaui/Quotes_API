@@ -108,7 +108,7 @@ To add new quotes, edit `db.json` following this format:
 Want to add a quote? You have two options:
 
 ### Option 1: Submit directly on the site
-Visit [quotes-api-pind.vercel.app](https://quotes-api-pink.vercel.app) and click "Submit a Quote" to create a GitHub issue.
+Visit [quotes-api-pink.vercel.app](https://quotes-api-pink.vercel.app) and click "Submit a Quote" to create a GitHub issue.
 
 ### Option 2: GitHub Pull Request
 1. Fork the repository

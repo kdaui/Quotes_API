@@ -127,6 +127,12 @@ function submitQuote() {
     document.getElementById('quote-author').value = '';
 }
     </script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/Quotes_API/sw.js').then(() => {});
+        }
+    </script>
 </body>
 
 </html>

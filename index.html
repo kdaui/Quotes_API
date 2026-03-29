@@ -69,6 +69,17 @@
         <p id="author">- ???</p>
     </div>
     <button onclick="getQuote()">GET NEW QUOTE</button>
+    <br><br>
+    <button onclick="document.getElementById('submit-form').style.display='block'" style="background:#333;font-size:12px;">SUBMIT A QUOTE</button>
+
+    <div id="submit-form" style="display:none;margin-top:20px;text-align:left;max-width:400px;">
+        <h3>Submit a Quote</h3>
+        <input type="text" id="quote-text" placeholder="Quote" style="width:100%;padding:8px;margin-bottom:10px;background:#1C2333;color:#B8C5D6;border:1px solid #2A3F5F;">
+        <input type="text" id="quote-author" placeholder="Character / Person" style="width:100%;padding:8px;margin-bottom:10px;background:#1C2333;color:#B8C5D6;border:1px solid #2A3F5F;">
+        <button onclick="submitQuote()" style="width:100%;">SUBMIT</button>
+        <p id="submit-msg" style="margin-top:10px;"></p>
+
+    </div>
 
     <script>
 async function getQuote() {
@@ -96,6 +107,24 @@ async function getQuote() {
 }
 
 getQuote();
+
+function submitQuote() {
+    const text = document.getElementById('quote-text').value.trim();
+    const author = document.getElementById('quote-author').value.trim();
+    
+    if (!text || !author) {
+        document.getElementById('submit-msg').innerText = 'Please fill in both fields';
+        return;
+    }
+    
+    const title = `Quote: ${text.substring(0, 50)}${text.length > 50 ? '...' : ''}`;
+    const body = `**Quote:** ${text}\n\n**Character:** ${author}`;
+    window.open(`https://github.com/kdaui/Quotes_API/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, '_blank');
+    
+    document.getElementById('submit-msg').innerText = 'Thanks! Your email app should open.';
+    document.getElementById('quote-text').value = '';
+    document.getElementById('quote-author').value = '';
+}
     </script>
     
     <footer>

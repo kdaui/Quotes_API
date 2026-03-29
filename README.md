@@ -65,32 +65,6 @@ curl https://quotes-api-pink.vercel.app/api/random
 }
 ```
 
-### Available Characters
-
-- Rei Ayanami (Evangelion)
-- Yui Ikari (Evangelion)
-- Kaworu Nagisa (Evangelion)
-- Gendo Ikari (Evangelion)
-- Misato Katsuragi (Evangelion)
-- Lain Iwakura (Serial Experiments Lain)
-- Miho Iwakura (Serial Experiments Lain)
-- NERV (Evangelion)
-- Elster (Signalis)
-- Adler (Signalis)
-- Eule (Signalis)
-- Ariane Yeong (Signalis)
-- Falke (Signalis)
-- Isolde 'Isa' Itou (Arknights)
-- Kanye West
-- Frank Ocean
-- Tupac Shakur
-- Kendrick Lamar
-- 50 Cent
-- Tyler the Creator
-- Terry A Davis
-- Milo
-- Lovecraft
-
 ### Adding Quotes
 
 To add new quotes, edit `db.json` following this format:

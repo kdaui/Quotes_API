@@ -96,7 +96,3 @@ Visit [quotes-api-pink.vercel.app](https://quotes-api-pink.vercel.app) and click
 
 - `id` must be unique (use the next available number)
 - `character` is just the name (e.g., "Rei Ayanami" or "Kanye West")
-
-## License
-
-MIT
